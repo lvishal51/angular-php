@@ -3,7 +3,7 @@ error_reporting(-1);
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 date_default_timezone_set('UTC');
-include('database.php');
+
 try {
     // Initialize Composer autoloader
     if (!file_exists($autoload = __DIR__ . '/vendor/autoload.php')) {
@@ -22,8 +22,6 @@ try {
     // Run application
     $app = new \Api\Application();
     $app->run();
-    $db = new Database();
-    $db->connect();
 
 } catch (\Exception $e) {
     if (isset($app)) {
