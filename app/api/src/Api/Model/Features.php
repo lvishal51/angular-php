@@ -1,6 +1,8 @@
 <?php
 
 namespace Api\Model;
+use Api\database;
+use Api\customer;
 
 class Features
 {
@@ -18,12 +20,23 @@ class Features
 
     public function getFeatures()
     {
+        $db = new Database();
+        $dbCon = $db->connect();
+        $customer = new Customer();
+        $cutomerData = $customer-> getCustomerData($dbCon);
         $features = array();
         foreach ($this->features as $id => $feature) {
+             $features[] = array(
+                 'id' => $id,
+                 'name' => $feature['name'],
+                'href' => $this->getHref($id)
+             );
+        }     
+        foreach ($cutomerData as $id2 => $customer) {
             $features[] = array(
-                'id' => $id,
-                'name' => $feature['name'],
-                'href' => $this->getHref($id),
+                 'id' => $id,
+                 'name' => $customer['name'],
+                'href' => $this->getHref($id)
             );
         }
         return $features;
