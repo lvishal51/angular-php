@@ -2,20 +2,20 @@
 
 /**
  * @ngdoc service
- * @name laptopApp.mainService
+ * @name laptopApp.innerService
  * @description
- * # mainService
+ * # innerService
  * Service in the laptopApp.
  */
 angular.module('laptopApp')
-  .service('Mainservice', function Mainservice($http,$q) {
+  .service('Innerservice', function Innerservice($http,$q) {
     // AngularJS will instantiate a singleton by calling "new" on this function
     return {
     	getData : getData
     };
-    function getData(){
+    function getData(url){
       var deferred  = $q.defer();
-      var url = '/api/features';
+      var url = url;
 
       $http.get(url).then(function (response) {
       	console.log('response',response);
@@ -30,5 +30,4 @@ angular.module('laptopApp')
 
       return deferred.promise;
 	}
-	console.log('inside-getdata');
   });

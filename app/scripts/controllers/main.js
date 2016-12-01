@@ -8,7 +8,7 @@
  * Controller of the laptopApp
  */
 angular.module('laptopApp')
-  .controller('MainCtrl', function ($scope, $http) {
+  .controller('MainCtrl', function ($scope, $http,Mainservice,Innerservice) {
 
     function createUnknownError(status) {
       return {
@@ -22,31 +22,24 @@ angular.module('laptopApp')
     $scope.loading = true;
 
     // Get awesome things list
-    $http({method: 'GET', url: '/api/features'}).
-
-      success(function (data) {
-        console.log('data',data);
-        $scope.loading = false;
-        $scope.awesomeThings = data;
-
-        // Get description of each thing
-        $scope.awesomeThings.forEach(function (thing) {
-          thing.loading = true;
-
-          $http({method: 'GET', url: thing.href}).
-            success(function (data) {
+          //$scope.loading = false;
+    Mainservice.getData().then(function (resp) {
+      $scope.loading = false;
+      $scope.awesomeThings =resp;
+      console.log('awesomeThings',$scope.awesomeThings);
+      $scope.awesomeThings.forEach(function (thing) {
+        thing.loading = true;
+        Innerservice.getData(thing.href).then(function (data) {
               thing.loading = false;
               thing.description = data.description;
-            }).
-            error(function (data, status) {
+          }, function (err) {
               thing.loading = false;
               thing.error = data && data.description ? data : createUnknownError(status);
-            });
         });
-      }).
-
-      error(function (data, status) {
+          thing.loading = true;
+      });            
+    }, function (err) {
         $scope.loading = false;
         $scope.error = data && data.description ? data : createUnknownError(status);
-      });
+    });         
   });
