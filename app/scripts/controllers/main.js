@@ -8,7 +8,7 @@
  * Controller of the laptopApp
  */
 angular.module('laptopApp')
-  .controller('MainCtrl', function ($scope, $http,Mainservice,Innerservice) {
+  .controller('MainCtrl', function ($scope, $http,Mainservice) {
 
     function createUnknownError(status) {
       return {
@@ -22,8 +22,16 @@ angular.module('laptopApp')
     $scope.loading = true;
 
     // Get awesome things list
-          //$scope.loading = false;
-    Mainservice.getData().then(function (resp) {
+    //$scope.loading = false;
+    Mainservice.getData().then(function (data) {
+      $scope.loading = false;
+      $scope.awesomeThings =data;
+      console.log('awesomeThings',$scope.awesomeThings);
+      }, function (err) {
+          $scope.loading = false;
+          $scope.error = data && data.description ? data : createUnknownError(status);
+    });         
+  /*  Mainservice.getData().then(function (resp) {
       $scope.loading = false;
       $scope.awesomeThings =resp;
       console.log('awesomeThings',$scope.awesomeThings);
@@ -41,5 +49,5 @@ angular.module('laptopApp')
     }, function (err) {
         $scope.loading = false;
         $scope.error = data && data.description ? data : createUnknownError(status);
-    });         
+    });    */     
   });

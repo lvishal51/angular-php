@@ -15,6 +15,19 @@ angular.module('laptopApp')
     };
     function getData(){
       var deferred  = $q.defer();
+      $http.get('data.json').then(function (response) {
+      	console.log('response',response);
+        if (response.data.statusCode) {
+          deferred.reject({status: response.data.statusCode});
+        } else {
+          deferred.resolve(response.data);
+        }
+      }, function (err) {
+        deferred.reject(err);
+      });
+
+      return deferred.promise;
+/*      var deferred  = $q.defer();
       var url = '/api/features';
 
       $http.get(url).then(function (response) {
@@ -28,7 +41,6 @@ angular.module('laptopApp')
         deferred.reject(err);
       });
 
-      return deferred.promise;
+      return deferred.promise;*/
 	}
-	console.log('inside-getdata');
   });
