@@ -1,7 +1,7 @@
   angular.module('laptopApp').config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
+        templateUrl: 'views/raw-html/index.html',
         controller: 'MainCtrl'
       })
       .when('/about', {
