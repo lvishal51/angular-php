@@ -7,12 +7,17 @@
  * # mainDirective
  */
 angular.module('laptopApp')
-  .directive('mainDirective', function () {
+  .directive('header', function () {
     return {
-      template: '<div></div>',
-      restrict: 'E',
-      link: function postLink(scope, element, attrs) {
-        element.text('this is the mainDirective directive');
-      }
+      restrict: 'E',		
+      templateUrl: 'views/raw-html/header.html',
+      controllerUrl: 'headerCtrl'
+    };
+  })
+  .directive('footer', function () {
+    return {
+      restrict: 'E',		
+      templateUrl: 'views/raw-html/footer.html',
+      controllerUrl: 'footerCtrl'
     };
   });
