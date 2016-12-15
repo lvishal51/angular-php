@@ -11,7 +11,7 @@ angular.module('laptopApp')
   .controller('AboutCtrl', function ($scope, $http, Mainservice) {
     
   	$scope.displayDiv = false;
-	$scope.checkboxes = [];
+	  $scope.checkboxes = [];
     $scope.hideFirstDiv = function() {
     	$scope.displayDiv = !$scope.displayDiv;
     }
