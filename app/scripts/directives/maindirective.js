@@ -10,14 +10,22 @@ angular.module('laptopApp')
   .directive('header', function () {
     return {
       restrict: 'E',		
-      templateUrl: 'views/raw-html/header.html',
+      templateUrl: 'views/header.html',
       controllerUrl: 'headerCtrl'
     };
   })
   .directive('footer', function () {
     return {
       restrict: 'E',		
-      templateUrl: 'views/raw-html/footer.html',
+      templateUrl: 'views/footer.html',
       controllerUrl: 'footerCtrl'
     };
+  })
+  .directive('signInDirective', function () {
+    return {
+      templateUrl: 'views/signIn.html',
+      controllerUrl: 'signinCtrl',
+      restrict: 'E'
+    };
   });
+

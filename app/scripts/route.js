@@ -1,24 +1,18 @@
   angular.module('laptopApp').config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/raw-html/main.html',
+        templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
       .when('/about', {
-        templateUrl: 'views/raw-html/about-us.html',
-        controller: 'AboutCtrl'
-      })
-      .when('/detail', {
-        templateUrl: 'views/raw-html/details.html',
-        controller: 'AboutCtrl'
+        templateUrl: 'views/about-us.html',
       })
       .when('/contact', {
-        templateUrl: 'views/raw-html/contact.html',
-        controller: 'AboutCtrl'
+        templateUrl: 'views/contact.html',
       })
       .when('/register', {
-        templateUrl: 'views/raw-html/register.html',
-        controller: 'AboutCtrl'
+        templateUrl: 'views/register.html',
+        controller: 'RegisterCtrl'
       })
       .otherwise({
         redirectTo: '/'
