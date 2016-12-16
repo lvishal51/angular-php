@@ -19,9 +19,17 @@
     padding: 10px 0;
     .footer-links {
     	padding: 0;
+    	text-align:right;
 	    li {
 	    	display: inline-block;
 	    	padding: 0 5px;
 	    }
     }
 }
+
+@media (min-width: 785px){
+	.footer-links {
+    	text-align:left;
+    }
+}
+

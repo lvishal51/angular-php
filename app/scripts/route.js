@@ -14,6 +14,10 @@
         templateUrl: 'views/register.html',
         controller: 'RegisterCtrl'
       })
+      .when('/details', {
+        templateUrl: 'views/details.html',
+        controller: 'RegisterCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
