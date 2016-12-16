@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name laptopApp.controller:RegisterCtrl
+ * @name laptopApp.controller:LaptoppartsCtrl
  * @description
- * # RegisterCtrl
+ * # LaptoppartsCtrl
  * Controller of the laptopApp
  */
 angular.module('laptopApp')
-  .controller('registerCtrl', function ($scope, $http) {
+  .controller('laptopPartsCtrl', function ($scope, $http) {
 
     function createUnknownError(status) {
       return {
