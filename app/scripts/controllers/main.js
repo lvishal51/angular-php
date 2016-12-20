@@ -8,7 +8,7 @@
  * Controller of the laptopApp
  */
 angular.module('laptopApp')
-  .controller('MainCtrl', function ($scope, $http,Mainservice) {
+  .controller('MainCtrl', function ($scope, $http,Mainservice,$location) {
 
     function createUnknownError(status) {
       return {
@@ -20,7 +20,10 @@ angular.module('laptopApp')
 
     $scope.awesomeThings = [];
     $scope.loading = true;
-
+    $scope.goTo = function(path) {
+        console.log('path',path);
+        $location.path(path);
+    }
     // Get awesome things list
     //$scope.loading = false;
     Mainservice.getData().then(function (data) {

@@ -12,7 +12,15 @@
       })
       .when('/register', {
         templateUrl: 'views/register.html',
-        controller: 'RegisterCtrl'
+        controller: 'registerCtrl'
+      })
+      .when('/listOfProblems', {
+        templateUrl: 'views/listOfProblems.html',
+        controller: 'listOfProblemsCtrl'
+      })
+      .when('/laptopParts', {
+        templateUrl: 'views/laptopParts.html',
+        controller: 'laptopPartsCtrl'
       })
       .when('/details', {
         templateUrl: 'views/details.html',
