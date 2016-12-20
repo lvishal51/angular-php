@@ -8,6 +8,20 @@
 	margin-bottom: 80px;
 	.info-text {
 		padding-left: 0;
+		margin-bottom:20px;
+	}
+	.info-section, .list-of-problems {
+	    border: 1px solid #DDD;
+	    color: #333;
+	    -webkit-box-shadow: 1px 1px 7px rgba(153, 153, 153, 0.2);
+	    -moz-box-shadow: 1px 1px 7px rgba(153, 153, 153, 0.2);
+	    box-shadow: 1px 1px 7px rgba(153, 153, 153, 0.2);
+	    border-radius: 5px;
+	    -webkit-border-radius: 5px;
+	    padding:10px;
+	}
+	.problem-details {
+		border-left:1px solid #000;
 	}
 }
 .footer {
@@ -27,9 +41,5 @@
     }
 }
 
-@media (min-width: 785px){
-	.footer-links {
-    	text-align:left;
-    }
-}
+
 
