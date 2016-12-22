@@ -20,10 +20,55 @@
 	    -webkit-border-radius: 5px;
 	    padding:10px;
 	}
+	.filter-section {
+		ul {
+			padding:0;
+			li {
+				list-style:none;
+			}
+		}
+	}
 	.problem-details {
-		border-left:1px solid #000;
+		border-left:1px solid #669999;
+		.dropdown {
+			float:right;
+			.btn {
+			    border-radius: 2px;
+			    padding: 2px 7px;
+			    background: #FBFBFB;
+			    color: #669999;
+			    border: 1px solid #E3E7E8;
+
+			    &:hover {
+			    	background:#FDFDFD;
+			    }
+				&:focus {
+					outline:none;
+					box-shadow:none;
+				}
+			}
+		}
+		.dropdown-menu {
+			left:49px;
+			min-width:89px;
+			li > a {
+				padding:3px 19px 3px 10px;
+			}
+		}
+		.problem-info {
+			margin: 15px 0 18px;
+    		border-bottom: 1px dashed #666;
+
+    		span {
+			    padding-bottom: 3px;
+			    display: block;
+			    color: #026E0A;
+			    font-weight: bold;
+    		}
+		}
 	}
 }
+
 .footer {
     position: fixed;
     bottom: 0;
@@ -40,6 +85,84 @@
 	    }
     }
 }
+
+
+
+
+
+
+
+
+/* Custom checkbox and radio buttons */
+input[type=radio], input[type=checkbox] {
+	    display:none;
+	}
+input[type=radio] + label, input[type=checkbox] + label {
+	font-weight:normal;
+}
+input[type=radio] + label:before {
+    content: "";  
+    display: inline-block;  
+    width: 15px;  
+    height: 15px;  
+    vertical-align:middle;
+    margin-right: 8px;  
+    background-color: #aaa;  
+    box-shadow: inset 0px 2px 2px rgba(0, 0, 0, .3);
+    border-radius: 8px;  
+}
+input[type=checkbox] + label:before {
+    content: "";  
+    display: inline-block;  
+    width: 15px;  
+    height: 15px;  
+    vertical-align:middle;
+    margin-right: 8px;  
+    background-color: #aaa;  
+    box-shadow: inset 0px 2px 2px rgba(0, 0, 0, .3);
+    border-radius: 4px;  
+}
+input[type=radio]:checked + label:before {
+    content: "\2022"; /* Bullet */
+    color:white;
+    background-color: #666; 
+    font-size:1.2em;
+    text-align:center;
+    line-height:17px;
+    text-shadow:0px 0px 3px #eee;
+}
+input[type=checkbox]:checked + label:before {
+    content:"\2714"; /* Tick */
+    color:white;
+    background-color: #666; 
+    text-align:center;
+    line-height:15px;
+    text-shadow:0px 0px 3px #eee;
+}
+
+
+@media only screen and (max-width: 768px) {
+	.main-content {
+		.filter-section {
+			ul {
+				li {
+					display:inline;
+
+					&:nth-child(2){
+						display:block;
+					}
+				}
+			}
+		}	
+		.problem-details {
+			border-left:none;
+			border-top:1px solid #669999;
+		}
+	}
+}
+
+
+
 
 
 
