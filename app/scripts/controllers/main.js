@@ -35,3 +35,8 @@ angular.module('laptopApp')
           $scope.error = data && data.description ? data : createUnknownError(status);
     });         
   });
+
+ 
+
+
+  

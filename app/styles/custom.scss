@@ -6,6 +6,10 @@
 }
 .main-content {
 	margin-bottom: 80px;
+	.back-link {
+		margin-bottom:10px;
+		display:block;
+	}
 	.info-text {
 		padding-left: 0;
 		margin-bottom:20px;
@@ -141,7 +145,7 @@ input[type=checkbox]:checked + label:before {
 }
 
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
 	.main-content {
 		.filter-section {
 			ul {
@@ -157,6 +161,11 @@ input[type=checkbox]:checked + label:before {
 		.problem-details {
 			border-left:none;
 			border-top:1px solid #669999;
+			padding-top:20px;
+		}
+
+		.info-section {
+			margin-bottom:10px;
 		}
 	}
 }

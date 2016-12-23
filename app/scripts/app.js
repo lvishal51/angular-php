@@ -8,7 +8,7 @@
  *
  * Main module of the application.
  */
-angular
+var app = angular
   .module('laptopApp', [
     'ngAnimate',
     'ngCookies',
@@ -17,3 +17,10 @@ angular
     'ngSanitize',
     'ngTouch'
   ]);
+
+ app.run(['$window', '$rootScope', 
+    function ($window ,  $rootScope) {
+      $rootScope.goBack = function(){
+        $window.history.back();
+      };
+}]);
