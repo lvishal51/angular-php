@@ -1,0 +1,6 @@
+1)computer/monitor/k eyboard/mouse doesn’t work 
+-->Is the power cord plugged in?Is the keyboard/mouse/monitor plugged into theCPU?Is the computer/monitor power button on?
+2)Sound doesn’t work 
+-->Are the speakers plugged in—correctly—to the CPU?If you have headphones, are they plugged in—correctly—to the CPU (match the colors)Is the volume up?Is there any sound playing?
+3)Monitor went black 
+-->Is it still plugged in? Is it seated correctly (wiggleand push—make sure it’s really plugged in)
