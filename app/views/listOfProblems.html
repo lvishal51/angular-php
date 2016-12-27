@@ -37,31 +37,17 @@
 			</ul>
 		</div>
 		<div class="col-md-10 col-sm-10 col-xs-12 problem-details">
-			<div class="dropdown">
-				<label>sort by</label>
-				<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">section 1
-				<span class="caret"></span></button>
-				<ul class="dropdown-menu">
-					<li><a href="#">section 2</a></li>
-					<li><a href="#">section 3</a></li>
-					<li><a href="#">section 4</a></li>
-				</ul>
-			</div>
-			<div ng-hide="displayDiv" class="problem-info">
-				<span>Problem--1</span>
-				<p>content of a page when looking at its layout. The point of using Lorem Ipsum is that it 
-				has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', 
-				making it look like readable English</p>
-				<p>solution link is- <a href="#">link</a></p>
-			</div>
-			<div  class="problem-info">
-				<span>Problem--2</span>
-				<p>when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages</p>
-				<p>solution link is- <a href="#">link</a></p>
-			</div>
-			<div class="problem-info">
-				<span>Problem--3</span>
-				<p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+				<select ng-model="selectedSortOption">
+					<option value="software">Software</option>
+					<option value="hardware">Hardware</option>
+				</select>
+				<div class="dropdown">
+					<label>sort by</label>
+				
+				</div>
+			<div class="problem-info" ng-repeat="data in awesomeThings | filter : selectedSortOption">
+				<span>{{data.id}}</span>
+				<p>{{data.probDesc}}</p>
 				<p>solution link is- <a href="#">link</a></p>
 			</div>
 		</div>
