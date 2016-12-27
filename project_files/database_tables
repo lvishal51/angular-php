@@ -1,3 +1,14 @@
+//open mysql
+mysql -p
+
+//create databse
+drop database laptop;
+create database laptop;
+
+//execute sql file to create tables
+use laptop
+source /home/vishall/study-2016/angular-php/project_files/database.sql
+
 ---user---
 user_id
 first_name
@@ -16,13 +27,33 @@ modified_time
 modified_by
 
 
+---parts_album---(many-one)
+album_id
+image_path
+
+
+---computer_parts---
+part_id
+part_name
+relatedwith_mainpart
+album_id(references table parts_album)
+part_cost
+short_desc
+long_desc
+moreinfo_links
+part_types(e.g disk types CD,DVD etc)
+created_time
+created_by
+modified_time
+modified_by
+
 
 ---questions---
 ques_id
 short_desc
 long_desc
-relatedwith_section
-relatedwith_part
+relatedwith_section (hardware/software etc)
+relatedwith_part (references table computer_parts)
 complexity
 created_time
 created_by
@@ -35,8 +66,8 @@ ans_id
 short_desc
 long_desc
 relatedwith_section
-relatedwith_part
-references
+relatedwith_part(references table computer_parts)
+reference(supporting links)
 complexity
 created_time
 created_by
@@ -44,25 +75,6 @@ modified_time
 modified_by
 
 
----computer_parts---
-part_id
-part_name
-relatedwith_mainpart
-album_id(references table parts_album)
-part_cost
-short_desc
-long_desc
-moreinfo_links
-part_types
-created_time
-created_by
-modified_time
-modified_by
-
-
----parts_album---(many-many)
-album_id
-image_path
 
 
 
