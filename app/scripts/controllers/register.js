@@ -36,4 +36,3 @@ angular.module('laptopApp')
     }
    
   });
-1

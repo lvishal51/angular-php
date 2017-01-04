@@ -9,6 +9,7 @@
       })
       .when('/contact', {
         templateUrl: 'views/contact.html',
+        controller: 'ContactCtrl'
       })
       .when('/register', {
         templateUrl: 'views/register.html',
