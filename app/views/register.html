@@ -4,7 +4,7 @@
 		<form class="form-horizontal" role="form">
                 <h2>Registration Form</h2>
                 <div class="form-group">
-                    <label for="firstName" class="col-sm-3 control-label">First Name</label>
+                    <label for="firstName" class="col-sm-3 control-label">First Name</label> {{fname}}
                     <div class="col-sm-9">
                         <input ng-model="fname" type="text" id="firstName" placeholder="First Name" class="form-control" autofocus>
                     </div>
@@ -73,7 +73,11 @@
                                     <label class="radio-inline">Male</label>
                             </div>
                             <div class="col-sm-4">                                
+<<<<<<< HEAD
                                     <input ng-model="unknown" type="radio" id="uncknownRadio" value="Unknown">
+=======
+                                    <input type="radio" id="uncknownRadio" value="Unknown">
+>>>>>>> 70a43fe98ee733e702790a13d87eb7317783a566
                                     <label class="radio-inline">Unknown</label>
                             </div>
                         </div>
