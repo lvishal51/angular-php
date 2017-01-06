@@ -15,7 +15,8 @@ var app = angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'angularValidator'
   ]);
 
  app.run(['$window', '$rootScope', 

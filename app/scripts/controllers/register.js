@@ -9,7 +9,7 @@
  */
 angular.module('laptopApp')
   .controller('registerCtrl', function ($scope, $http) {
-    $scope.fname = 'dsad';
+    $scope.fname = '';
     $scope.mname = '';
     $scope.lname = '';
     $scope.mob = '';
