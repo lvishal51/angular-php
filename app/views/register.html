@@ -1,37 +1,46 @@
 
 <div class="container main-content">
 	<div class="col-md-6 info-text">
-		<form class="form-horizontal" role="form">
+		<form name="register-form" class="form-horizontal" role="form" angular-validator-submit="register()" novalidate angular-validator>
                 <h2>Registration Form</h2>
                 <div class="form-group">
                     <label for="firstName" class="col-sm-3 control-label">First Name</label>
                     <div class="col-sm-9">
-                        <input required ng-model="fname" type="text" id="firstName" placeholder="First Name" class="form-control" autofocus>
+                        <input ng-model="fname" type="text" id="firstName" placeholder="First Name" class="form-control" autofocus 
+                        name = "dirty"
+                        validate-on="dirty"
+                        ng-model = "fname"
+                        ng-pattern="/regex/"
+                        invalid-message="'You must enter the word `regex`'"
+                        required-message="'Yo! This field is required..'">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="middleName" class="col-sm-3 control-label">Middle Name</label>
                     <div class="col-sm-9">
-                        <input required ng-model="mname" type="text" id="middleName" placeholder="Middle Name" class="form-control" autofocus>
+                        <input ng-model="mname"type="text" id="middleName" placeholder="Middle Name" class="form-control" autofocus>
                     </div>
 
                 </div>
                 <div class="form-group">
                     <label for="lastName" class="col-sm-3 control-label">Last Name</label>
                     <div class="col-sm-9">
-                        <input required ng-model="lname" type="text" id="lastName" placeholder="Full Name" class="form-control" autofocus>
+                        <input ng-model="lname" ng-required="true" type="text" id="lastName" placeholder="Full Name" class="form-control" autofocus>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="mobile" class="col-sm-3 control-label">Mobile</label>
                     <div class="col-sm-9">
-                        <input ng-model="mob" type="numebr" id="mobile" class="form-control">
+                        <input ng-model="mob" ng-required="true" type="numebr" id="mobile" class="form-control">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="email" class="col-sm-3 control-label">Email</label>
                     <div class="col-sm-9">
-                        <input ng-model="email" type="email" id="email" placeholder="Email" class="form-control">
+                        <input ng-model="email" type="email" id="email" placeholder="Email" class="form-control"
+                            invalid-message="'Thats not a real email address'"
+                            required-message="'Yo this is required'"
+                            validate-on="dirty">
                     </div>
                 </div>
                 <div class="form-group">
@@ -73,8 +82,8 @@
                                     <input ng-model="male" type="radio" id="maleRadio" value="Male">
                                     <label class="radio-inline">Male</label>
                             </div>
-                            <div class="col-sm-4">                                
-                                    <input ng-model="unknown" type="radio" id="uncknownRadio" value="Unknown">
+                            <div class="col-sm-4"> 
+                                    <input ng-model="unknown" type="radio" id="uncknownRadio" value="Unknown">                                  
                                     <label class="radio-inline">Unknown</label>
                             </div>
                         </div>
@@ -91,7 +100,7 @@
                 </div> <!-- /.form-group -->
                 <div class="form-group">
                     <div class="col-sm-9 col-sm-offset-3">
-                        <button type="submit" class="btn btn-primary" ng-click="register()">Register</button>
+                        <button type="submit" class="btn btn-primary">Register</button>
                     </div>
                 </div>
             </form>
