@@ -49,6 +49,7 @@ angular.module('laptopApp')
 
       success(function (data) {
         $scope.loading = false;
+        console.log('/api/features',data);
 //        $scope.awesomeThings = data;
 
         // Get description of each thing

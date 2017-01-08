@@ -3,6 +3,7 @@
 namespace Api;
 
 use Api\Model\Features;
+use Api\Model\User;
 use \Slim\Slim;
 use \Exception;
 
@@ -44,7 +45,7 @@ class Application extends Slim
         $this->get('/features', function () {
             $features = new Features($this->config['features']);
             $this->response->headers->set('Content-Type', 'application/json');
-            $this->response->setBody(json_encode($features->getFeatures()));
+            $this->response->setBody(json_encode($features->getUserData()));
         });
 
         $this->get('/features/:id', function ($id) {

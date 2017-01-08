@@ -1,13 +1,13 @@
 
 drop table user;
 
-CREATE TABLE user (user_id int(10),first_name VARCHAR(20), middle_name VARCHAR(20), last_name VARCHAR(20),gender VARCHAR(10), country VARCHAR(10), dob DATE, address VARCHAR(30), mobile VARCHAR(10), email VARCHAR(30),user_type varchar(10), created_time DATE,created_by VARCHAR(30), modified_by VARCHAR(30), modified_time DATE, PRIMARY KEY (user_id));
+CREATE TABLE user (user_id int(10),first_name VARCHAR(20), middle_name VARCHAR(20), last_name VARCHAR(20),gender VARCHAR(10), country VARCHAR(10), dob DATE, address VARCHAR(30), mobile VARCHAR(10), email VARCHAR(30), password VARCHAR(30),user_type varchar(10), created_time DATE,created_by VARCHAR(30), modified_by VARCHAR(30), modified_time DATE, PRIMARY KEY (user_id));
 
-insert into user values(1, 'first1', 'middle1', 'last1', 'M', 'India', '12-12-1978', 'Pune1', '9876543210', 'first1@gmail.com','admin','10-10-2010',1,'20-10-2010','');
-insert into user values(2, 'first2', 'middle2', 'last2', 'F', 'India', '11-12-1978', 'Pune2', '9876543210', 'first2@gmail.com','regular','11-10-2010',1,'21-10-2010','');
-insert into user values(3, 'first3', 'middle3', 'last3', 'M', 'India', '13-12-1978', 'Pune3', '9876543210', 'first1@gmail.com','admin','13-10-2010',1,'22-10-2010','');
-insert into user values(4, 'first4', 'middle4', 'last4', 'M', 'India', '14-12-1978', 'Pune4', '9876543210', 'first1@gmail.com','admin','14-10-2010',1,'23-10-2010','');
-insert into user values(5, 'first5', 'middle5', 'last5', 'M', 'India', '15-12-1978', 'Pune5', '9876543210', 'first1@gmail.com','admin','15-10-2010',1,'24-10-2010','');
+insert into user values(1, 'first1', 'middle1', 'last1', 'M', 'India', '12-12-1978', 'Pune1', '9876543210', 'first1@gmail.com','p1','admin','10-10-2010',1,'20-10-2010','');
+insert into user values(2, 'first2', 'middle2', 'last2', 'F', 'India', '11-12-1978', 'Pune2', '9876543210', 'first2@gmail.com','p2','regular','11-10-2010',1,'21-10-2010','');
+insert into user values(3, 'first3', 'middle3', 'last3', 'M', 'India', '13-12-1978', 'Pune3', '9876543210', 'first1@gmail.com','p3','admin','13-10-2010',1,'22-10-2010','');
+insert into user values(4, 'first4', 'middle4', 'last4', 'M', 'India', '14-12-1978', 'Pune4', '9876543210', 'first1@gmail.com','p4','admin','14-10-2010',1,'23-10-2010','');
+insert into user values(5, 'first5', 'middle5', 'last5', 'M', 'India', '15-12-1978', 'Pune5', '9876543210', 'first1@gmail.com','p5','admin','15-10-2010',1,'24-10-2010','');
 
 
 
