@@ -27,6 +27,10 @@
         templateUrl: 'views/details.html',
         controller: 'RegisterCtrl'
       })
+      .when('/ansOfProblems', {
+        templateUrl: 'views/ansOfProblems.html',
+        controller: 'ansOfProblemsCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
