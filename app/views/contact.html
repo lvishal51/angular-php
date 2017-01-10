@@ -2,16 +2,31 @@
 <div class="container main-content">
 	<div class="col-md-6 info-text">
 		<div class="form-area">  
-        <form role="form">
+        <form name="contact-form" class="form-horizontal" role="form" angular-validator-submit="contact()" novalidate angular-validator>
                     <h3>Contact Form</h3>
     				<div class="form-group">
-						<input ng-model="name" type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+						<input ng-model="name" type="text" class="form-control" id="name" name="name" placeholder="Name"
+                        required
+                        ng-unique="{key: 'users', property: 'username'}"
+                        ng-pattern="/^[a-zA-Z\s]*$/" 
+                        autofocus>
 					</div>
 					<div class="form-group">
-						<input ng-model="email" type="text" class="form-control" id="email" name="email" placeholder="Email" required>
-					</div>
+                    <input ng-model="email" type="email" placeholder="Email" class="form-control"
+                        name = "emailAddress"
+                        ng-model = "form.emailAddress"
+                        invalid-message="'Thats not a real email address'"
+                        required-message="'Yo this is required'"
+                        validate-on="dirty"
+                        required>
+                </div>
 					<div class="form-group">
-						<input ng-model="mob" type="text" class="form-control" id="mobile" name="mobile" placeholder="Mobile Number" required>
+						<input ng-model="mob" type="text" class="form-control" id="mobile" name="mobile" 
+						placeholder="Mobile Number" 
+                        required
+                        ng-unique="{key: 'users', property: 'mobile'}"
+                        ng-pattern="/^(\+\d{1,3}[- ]?)?\d{10}$/" 
+                        autofocus>
 					</div>
 					<div class="form-group">
 						<input ng-model="sub" type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
@@ -21,7 +36,7 @@
                         <span class="help-block"><p id="characterLeft" class="help-block ">You have reached the limit</p></span>                    
                     </div>
             
-        <button ng-click="contact()" type="button" id="submit" name="submit" class="btn btn-primary pull-right">Submit Form</button>
+        <button type="submit" class="btn btn-primary pull-right">Submit Form</button>
         </form>
     </div>
 	</div>

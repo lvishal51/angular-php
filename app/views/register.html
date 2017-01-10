@@ -6,14 +6,15 @@
                 <div class="form-group">
                     <label for="firstName" class="col-sm-3 control-label">First Name</label> {{fname}}
                     <div class="col-sm-9">
-                        <input ng-model="fname" type="text" id="firstName" placeholder="First Name" class="form-control" autofocus 
-                        name = "dirty"
-                        validate-on="dirty"
-                        ng-model = "fname"
-                        ng-pattern="/regex/"
-                        invalid-message="'You must enter the word `regex`'"
-                        required-message="'Yo! This field is required..'" required>
-
+                        <input ng-model="fname" type="text" id="firstName" placeholder="First Name" 
+                        name="username"
+                        placeholder="Username"
+                        class="form-control"
+                        ng-model="fname"
+                        required
+                        ng-unique="{key: 'users', property: 'username'}"
+                        ng-pattern="/^[a-zA-Z\s]*$/" 
+                        autofocus>
                     </div>
                 </div>
                 <div class="form-group">
@@ -25,28 +26,51 @@
                 <div class="form-group">
                     <label for="lastName" class="col-sm-3 control-label">Last Name</label>
                     <div class="col-sm-9">
-                        <input ng-model="lname" ng-required="true" type="text" id="lastName" placeholder="Full Name" class="form-control" autofocus>
+                        <input ng-model="lname" type="text" id="lastName" placeholder="Full Name"
+                        name="lname" 
+                        class="form-control"
+                        ng-model="lname"
+                        required
+                        ng-unique="{key: 'users', property: 'lname'}"
+                        ng-pattern="/^[a-zA-Z\s]*$/" 
+                        autofocus>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="mobile" class="col-sm-3 control-label">Mobile</label>
                     <div class="col-sm-9">
-                        <input ng-model="mob" ng-required="true" type="numebr" id="mobile" class="form-control">
+                        <input ng-model="mob" ng-required="true" type="numebr" id="mobile" class="form-control"name="mob"
+                        placeholder="mobile"
+                        required
+                        ng-unique="{key: 'users', property: 'mobile'}"
+                        ng-pattern="/^(\+\d{1,3}[- ]?)?\d{10}$/" 
+                        autofocus>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="email" class="col-sm-3 control-label">Email</label>
                     <div class="col-sm-9">
-                        <input ng-model="email" type="email" id="email" placeholder="Email" class="form-control"
+                        <input ng-model="email" placeholder="Email"
+                            type = "email"
+                            name = "emailAddress"
+                            class = "form-control"
+                            ng-model = "form.emailAddress"
                             invalid-message="'Thats not a real email address'"
                             required-message="'Yo this is required'"
-                            validate-on="dirty">
+                            validate-on="dirty"
+                            required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="password" class="col-sm-3 control-label">Password</label>
                     <div class="col-sm-9">
-                        <input ng-model="password" type="password" id="password" placeholder="Password" class="form-control">
+                        <input ng-model="password" type="password" id="password" placeholder="Password" class="form-control"    type = "password"
+                            name = "password"
+                            class = "form-control"
+                            ng-model = "password"                            
+                            ng-pattern="/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/" 
+                            validate-on="dirty"
+                            required>
                     </div>
                 </div>
                 <div class="form-group">
@@ -93,7 +117,7 @@
                 <div class="form-group">
                     <div class="col-sm-9 col-sm-offset-3">
                         <div class="checkbox">
-                            <input type="checkbox" />
+                            <input type="checkbox" ng-required="true" />
                             <label>I accept <a href="#">terms</a></label>
                         </div>
                     </div>
