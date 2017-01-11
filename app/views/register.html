@@ -98,27 +98,27 @@
                     <label class="control-label col-sm-3">Gender</label>
                     <div class="col-sm-6">
                         <div class="row">
-                            <div class="col-sm-4">                                
-                                    <input ng-model="female" type="radio" id="femaleRadio" value="Female">
-                                    <label class="radio-inline">Female</label>
+                            <div class="col-sm-4">
+                                    <input type="radio" id="femaleRadio" name="radio-option" value="" checked>
+                                    <label for="femaleRadio">female</label>
                             </div>
-                            <div class="col-sm-4">                               
-                                    <input ng-model="male" type="radio" id="maleRadio" value="Male">
-                                    <label class="radio-inline">Male</label>
+                            <div class="col-sm-4">
+                                    <input type="radio" id="maleRadio" name="radio-option" value="" checked>
+                                    <label for="maleRadio">male</label>
                             </div>
-                            <div class="col-sm-4"> 
-                                    <input ng-model="unknown" type="radio" id="uncknownRadio" value="Unknown">                                  
-                                    <label class="radio-inline">Unknown</label>
+                            <div class="col-sm-4">
+                                    <input type="radio" id="uncknownRadio" name="radio-option" value="" checked>
+                                    <label for="uncknownRadio">uncknown</label>                                   
                             </div>
-                        </div>
+                        </div> 
                     </div>
                 </div> <!-- /.form-group -->
                 
                 <div class="form-group">
                     <div class="col-sm-9 col-sm-offset-3">
                         <div class="checkbox">
-                            <input type="checkbox" ng-required="true" />
-                            <label>I accept <a href="#">terms</a></label>
+                            <input type="checkbox" ng-required="true" name="checkbox-opt" id="terms" />
+                            <label for="terms">I accept <a href="#">terms</a></label>
                         </div>
                     </div>
                 </div> <!-- /.form-group -->

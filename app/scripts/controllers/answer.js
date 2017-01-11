@@ -49,5 +49,5 @@ angular.module('laptopApp')
         $scope.error = data && data.description ? data : createUnknownError(status);
       });
 
-      angular.element('.carousel').carousel()
+      $('.carousel').carousel()
   });
