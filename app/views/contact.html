@@ -4,14 +4,34 @@
 		<div class="form-area">  
         <form role="form">
                     <h3>Contact Form</h3>
-    				<div class="form-group">
-						<input ng-model="name" type="text" class="form-control" id="name" name="name" placeholder="Name" required>
-					</div>
+    				
+                <div class="form-group">
+                    <input ng-model="name" type="text" id="lastName" placeholder="Full Name"
+                    name="lname" 
+                    class="form-control"
+                    required
+                    ng-unique="{key: 'users', property: 'name'}"
+                    ng-pattern="/^[a-zA-Z\s]*$/" 
+                    autofocus>
+                </div>
 					<div class="form-group">
-						<input ng-model="email" type="text" class="form-control" id="email" name="email" placeholder="Email" required>
-					</div>
+                   <input ng-model="email" placeholder="Email"
+                            type = "email"
+                            name = "emailAddress"
+                            class = "form-control"
+                            ng-model = "form.emailAddress"
+                            invalid-message="'Thats not a real email address'"
+                            required-message="'Yo this is required'"
+                            validate-on="dirty"
+                            required>
+                </div>
 					<div class="form-group">
-						<input ng-model="mob" type="text" class="form-control" id="mobile" name="mobile" placeholder="Mobile Number" required>
+						  <input ng-model="mob" ng-required="true" type="numebr" id="mobile" class="form-control"name="mob"
+                        placeholder="mobile"
+                        required
+                        ng-unique="{key: 'users', property: 'mobile'}"
+                        ng-pattern="/^(\+\d{1,3}[- ]?)?\d{10}$/" 
+                        autofocus>
 					</div>
 					<div class="form-group">
 						<input ng-model="sub" type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
