@@ -47,13 +47,13 @@ angular.module('laptopApp')
                         {'user_type': 'admin'} 
                       ];
 
-       $http({method: 'POST', url: '/api/features',headers: {
+       $http({method: 'POST', url: '/api/features/register',headers: {
    'Content-Type': 'json'
  }, data:{data: dataArray}}).
 
           success(function (data) {
             $scope.loading = false;
-            console.log('/api/features',data);
+            console.log('/api/features/register',data);
           }).
 
           error(function (data, status) {

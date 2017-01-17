@@ -13,16 +13,16 @@ insert into user values(5, 'first5', 'middle5', 'last5', 'M', 'India', '15-12-19
 
 drop table images;
 
-create table images(image_id int(5) AUTO_INCREMENT, image_path varchar(30), created_time DATE,created_by VARCHAR(30), modified_by VARCHAR(30), modified_time DATE);
+create table images(id int(5) AUTO_INCREMENT, image_id int(5), image_path varchar(30), created_time DATE,created_by VARCHAR(30), modified_by VARCHAR(30), modified_time DATE, PRIMARY KEY (id));
 
-insert into images values(1,'images/yeoman.png','15-10-2010',1,'24-10-2010','');
-insert into images values(1,'images/logo.jng','15-10-2010',1,'24-10-2010','');
-insert into images values(2,'images/logo.jng','15-10-2010',1,'24-10-2010','');
-insert into images values(2,'images/yeoman.png','15-10-2010',1,'24-10-2010','');
-insert into images values(3,'images/logo.jng','15-10-2010',1,'24-10-2010','');
-insert into images values(3,'images/yeoman.png','15-10-2010',1,'24-10-2010','');
-insert into images values(4,'images/yeoman.png','15-10-2010',1,'24-10-2010','');
-insert into images values(5,'images/yeoman.png','15-10-2010',1,'24-10-2010','');
+insert into images values(1,1,'images/yeoman.png','15-10-2010',1,'24-10-2010','');
+insert into images values(2,1,'images/logo.jng','15-10-2010',1,'24-10-2010','');
+insert into images values(3,2,'images/logo.jng','15-10-2010',1,'24-10-2010','');
+insert into images values(4,2,'images/yeoman.png','15-10-2010',1,'24-10-2010','');
+insert into images values(5,3,'images/logo.jng','15-10-2010',1,'24-10-2010','');
+insert into images values(6,3,'images/yeoman.png','15-10-2010',1,'24-10-2010','');
+insert into images values(7,4,'images/yeoman.png','15-10-2010',1,'24-10-2010','');
+insert into images values(8,5,'images/yeoman.png','15-10-2010',1,'24-10-2010','');
 
 
 drop table parts_album;
@@ -68,3 +68,13 @@ insert into answers values(202,'short-desc-2','long-desc-2','software',2,0,'stac
 insert into answers values(203,'short-desc-3','long-desc-3','hardware',1,1,'stackoverfolw.com,google etc','15-10-2010',1,'24-10-2010','');
 insert into answers values(204,'short-desc-4','long-desc-4','software',5,5,'stackoverfolw.com,google etc','15-10-2010',1,'24-10-2010','');
 insert into answers values(205,'short-desc-5','long-desc-5','hardware',4,3,'stackoverfolw.com,google etc','15-10-2010',1,'24-10-2010','');
+
+
+drop table ques_ans;
+
+CREATE TABLE ques_ans (quesans_id int(10) AUTO_INCREMENT, ques_id int(10), ans_id int(10), created_time DATE,created_by VARCHAR(30), modified_time DATE, modified_by VARCHAR(30), PRIMARY KEY (quesans_id), FOREIGN KEY (ques_id) REFERENCES questions(ques_id), FOREIGN KEY (ans_id) REFERENCES answers(ans_id));
+
+
+drop table contact_us;
+
+CREATE TABLE contact_us (contact_id int(10) AUTO_INCREMENT, name VARCHAR(50), email VARCHAR(50), mobile VARCHAR(50), subject VARCHAR(50), message VARCHAR(200), PRIMARY KEY (contact_id));

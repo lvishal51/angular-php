@@ -48,7 +48,7 @@ class Application extends Slim
             $this->response->setBody(json_encode($features->getUserData()));
         });
 
-        $this->post('/features', function () {
+        $this->post('/features/register', function () {
            
             $request = Slim::getInstance()->request();
             $data = json_decode($request->getBody());
