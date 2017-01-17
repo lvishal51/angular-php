@@ -16,8 +16,7 @@ password
 namespace Api;
 class User
 {
-	public function getUserData($myconn)
-    {
+	public function getUserData($myconn){
         if($myconn)
         {            
             $sql = "select * from user";
@@ -43,6 +42,25 @@ class User
                   return $dataArray;   
                 } else {
                      echo "0 results";
+                }
+        } else
+        {
+            return false; 
+        }    
+    }
+
+    public function saveUserData($myconn, $dataArray)
+    {
+        if($myconn)
+        {            
+            
+            $sql = "insert into user values('', '".$dataArray["first_name"]."','".$dataArray["middle_name"]."' , '".$dataArray["last_name"]."','".$dataArray["gender"]."','".$dataArray["country"]."', '".$dataArray["dob"]."', '".$dataArray["address"]."', ".$dataArray["mobile"].", '".$dataArray["email"]."','".$dataArray["password"]."','".$dataArray["user_type"]."','10-10-2010','20-10-2010','','');
+";
+                $result = $myconn->query($sql);
+                if ($result) {
+                    echo "New record created successfully";
+                } else {
+                     echo "Error";
                 }
         } else
         {

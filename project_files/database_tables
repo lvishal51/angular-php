@@ -21,6 +21,7 @@ address
 mobile
 email
 password
+user_type
 created_time
 created_by
 modified_time
@@ -86,3 +87,13 @@ created_time
 created_by
 modified_time
 modified_by
+
+
+
+----contact_us----
+id
+name
+email
+mobile
+subject
+message

@@ -22,7 +22,7 @@ angular.module('laptopApp')
     $scope.unknown = '';
 
     $scope.register = function () {
-      console.log('first name', $scope.fname);
+   /*   console.log('first name', $scope.fname);
       console.log('middle name', $scope.mname);
       console.log('last name', $scope.lname);
       console.log('mobile', $scope.mob);
@@ -32,7 +32,35 @@ angular.module('laptopApp')
       console.log('female', $scope.female);
       console.log('unknown', $scope.unknown);
       console.log('email', $scope.email);
-      console.log('password', $scope.password);
+      console.log('password', $scope.password);*/
+      var dataArray = [
+                        {'first_name': $scope.fname},
+                        {'middle_name' : $scope.mname},
+                        {'last_name': $scope.lname},
+                        {'gender':'Male'},
+                        {'country': $scope.country},
+                        {'dob': $scope.dob},
+                        {'address': 'Pune'},
+                        {'mobile': $scope.mob},
+                        {'email': $scope.email},
+                        {'password': $scope.password},
+                        {'user_type': 'admin'} 
+                      ];
+
+       $http({method: 'POST', url: '/api/features',headers: {
+   'Content-Type': 'json'
+ }, data:{data: dataArray}}).
+
+          success(function (data) {
+            $scope.loading = false;
+            console.log('/api/features',data);
+          }).
+
+          error(function (data, status) {
+            $scope.loading = false;
+            $scope.error = data && data.description ? data : createUnknownError(status);
+          });
+
     }
    
   });

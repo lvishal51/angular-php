@@ -48,9 +48,5 @@ angular.module('laptopApp')
         $scope.loading = false;
         $scope.error = data && data.description ? data : createUnknownError(status);
       });
-<<<<<<< HEAD
-=======
-
       $('.carousel').carousel()
->>>>>>> 6677ae4... resolved checkbox and radio issue.
   });
