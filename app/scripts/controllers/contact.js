@@ -8,11 +8,11 @@
  * Controller of the laptopApp
  */
 angular.module('laptopApp')
-  .controller('ContactCtrl', function ($scope) {
+  .controller('ContactCtrl', function ($scope, $http) {
     $scope.name = '';
-    $scope.mob = '';
+    $scope.mobile = '';
     $scope.email = '';
-    $scope.sub = '';
+    $scope.subject = '';
     $scope.message = '';
 
     $scope.contact = function () {
@@ -21,6 +21,24 @@ angular.module('laptopApp')
       console.log('email', $scope.email);
       console.log('subject', $scope.sub);
       console.log('message', $scope.message);
+      var dataArray = [
+          {'name': $scope.name},
+          {'email': $scope.email},
+          {'mobile' : $scope.mobile},
+          {'subject': $scope.subject},
+          {'message': $scope.message}
+      ];
+
+      $http({ method: 'POST', url: '/api/features/save_contact',
+              headers: {'Content-Type': 'json'},
+              data:{data: dataArray} }).
+
+        success(function (data) {
+          console.log('/api/features/save_contact',data);
+        }).
+
+        error(function (data, status) {
+        });
     };
    
-  });
+});

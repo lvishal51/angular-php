@@ -57,6 +57,15 @@ class Application extends Slim
             $this->response->setBody(json_encode($features->saveUserData($data)));
         });
 
+        $this->post('/features/save_contact', function () {
+           
+            $request = Slim::getInstance()->request();
+            $data = json_decode($request->getBody());
+            $features = new Features($this->config['features']);
+            $this->response->headers->set('Content-Type', 'application/json');
+            $this->response->setBody(json_encode($features->saveContactData($data)));
+        });
+
         $this->get('/features/:id', function ($id) {
             $features = new Features($this->config['features']);
             $feature = $features->getFeature($id);

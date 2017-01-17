@@ -6,8 +6,11 @@ drop database laptop;
 create database laptop;
 
 //execute sql file to create tables
-use laptop
+drop database laptop;
+create database laptop;
 source /home/vishall/study-2016/angular-php/project_files/database.sql
+
+use laptop
 
 ---user---
 user_id
@@ -91,7 +94,7 @@ modified_by
 
 
 ----contact_us----
-id
+contact_id
 name
 email
 mobile

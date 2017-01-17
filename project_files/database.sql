@@ -77,4 +77,4 @@ CREATE TABLE ques_ans (quesans_id int(10) AUTO_INCREMENT, ques_id int(10), ans_i
 
 drop table contact_us;
 
-CREATE TABLE contact_us (contact_id int(10) AUTO_INCREMENT, name VARCHAR(50), email VARCHAR(50), mobile VARCHAR(50), subject VARCHAR(50), message VARCHAR(200), PRIMARY KEY (contact_id));
+CREATE TABLE contact_us (contact_id int(10) AUTO_INCREMENT, name VARCHAR(50), email VARCHAR(50), mobile VARCHAR(50), subject VARCHAR(50), message VARCHAR(200), created_time DATE, created_by VARCHAR(30), modified_time DATE, modified_by VARCHAR(30), PRIMARY KEY (contact_id));

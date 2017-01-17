@@ -42,9 +42,24 @@ class Features
          'user_type' =>  $row->data[10]->user_type                
         );
         //var_dump($dataArray['first_name']);
-        $userData = $user-> saveUserData($dbCon, $dataArray);
+        $userData = $user-> saveUserData($dbCon, $dataArray);        
+    }
 
+    public function saveContactData($row)
+    {
+        var_dump($row);
+        $db = new Database();
+        $dbCon = $db->connect();
+        $user = new User();
+        $dataArray = array(
+         'name' =>  $row->data[0]->name,
+         'email' =>  $row->data[1]->email,
+         'mobile' =>  $row->data[2]->mobile,
+         'subject' =>  $row->data[3]->subject,
+         'message' =>  $row->data[4]->message
+        );
         
+        $userData = $user-> saveContactData($dbCon, $dataArray);        
     }
 
     public function getFeature($id)
