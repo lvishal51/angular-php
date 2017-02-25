@@ -25,6 +25,7 @@ class Features
     }
     public function saveUserData($row)
     {
+        var_dump($row);
         $db = new Database();
         $dbCon = $db->connect();
         $user = new User();

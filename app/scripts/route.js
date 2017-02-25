@@ -31,6 +31,14 @@
         templateUrl: 'views/ansOfProblems.html',
         controller: 'ansOfProblemsCtrl'
       })
+       .when('/parts', {
+        templateUrl: 'views/parts.html',
+        controller: 'partsCtrl'
+      })
+      .when('/faqs', {
+        templateUrl: 'views/faqs.html',
+        controller: 'faqsCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

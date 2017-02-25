@@ -4,7 +4,24 @@
 			<a href="#" ng-click="goBack()" class="back-link"><span class="glyphicon glyphicon-chevron-left"></span> back<a>
 		</div>
 	</div>
-	<div class="row ans-of-problems">
-		<div>answers</div>
+	<div class="row info-container">
+		<div ng-click="goTo('/listOfProblems');" class="col-md-4">
+			<div class="info-section">
+				<a><h3>Problems & Solutions</h3></a>
+				<p>In this section you can find laptop problems as well as their solution.This section helps you to resolve your laptop<span style="background-color: purple"> hardware & software</span> problem.you have select the question, we have attched the solutions with that questions. If you are not able to find the problem then Don't worry contact us.</p>
+			</div>
+		</div>
+		<div ng-click="goTo('/laptopParts');" class="col-md-4">
+			<div class="info-section">
+				<a><h3>Laptop Parts</h3></a>
+				<p>In this section you will get all the infromation about parts.Each laptop model contain different type of parts.Same make of laptop but different model also need different.Also we have provided<span style="background-color: gold"> approximate price</span> of parts , it will save your money.But always keep in mind these are approx value's of parts.These are given only to stop your loot from frauds. </p>
+			</div>
+		</div>
+		<div ng-click="goTo('/faqs');" class="col-md-4">
+			<div class="info-section">
+				<a><h3>FAQ's</h3></a>
+				<p>In this section you will find<span style="background-color: gold"> Frequently Asked Questions.</span>Some we cannot explain our problems or we don't understand what's the actual problem.So this section is very helpful foe those who are not able to find their laptop problem.This question's are asked by the user's in thier own language,so you can understand the their language as well as problems and solve your problem .</p>
+			</div>
+		</div>
 	</div>
 </div>

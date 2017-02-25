@@ -5,7 +5,7 @@ class Database
 {
 	private $db_host = 'localhost'; 
 	private $db_user = 'root'; 
-	private $db_pass = 'password'; 
+	private $db_pass = '123'; 
 	private $db_name = 'laptop'; 
    	
     public function connect()

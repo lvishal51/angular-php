@@ -8,14 +8,15 @@ create database laptop;
 //execute sql file to create tables
 drop database laptop;
 create database laptop;
-source /home/vishall/study-2016/angular-php/project_files/database.sql
+source /home/shubham/laptopGarage/angular-php/project_files/database.sql
+
 
 use laptop
 
 ---user---
 user_id
 first_name
-middle_name
+middle_namesource /home/vishall
 last_name
 dob
 gender
